@@ -17,26 +17,9 @@ public class App {
         System.out.println("RabbitMQ JMS Client Sample Starting...");
         
         try {
-            // Run the queue testcase (point-to-point messaging)
-            QueueTestcase.run();
-            
-            // Run the topic testcase (publish/subscribe messaging)
-            TopicTestcase.run();
-            
-            // Run the transaction testcase
-            TransactionTestcase.run();
-            
-            // Run the non-persistent queue testcase
-            NonPersistentQueueTestcase.run();
-            
-            // Run JMS 2.0 testcases
-            JMSContextTestcase.run();
-            AsyncConsumerTestcase.run();
-            SharedConsumerTestcase.run();
-            DeliveryDelayTestcase.run();
-            MessageBodyTestcase.run();
-            
-            System.out.println("Sample completed successfully!");
+            PublishToAMQPQueueTest.run();
+//            ConsumeFromAMQPQueueTest.run();
+//            ConsumeFromAMQPStreamTest.run();
         } catch (Exception e) {
             System.err.println("Error in sample: " + e.getMessage());
             e.printStackTrace();
