@@ -4,7 +4,7 @@ import com.rabbitmq.jms.admin.RMQDestination;
 import jakarta.jms.*;
 import com.rabbitmq.jms.admin.RMQConnectionFactory;
 
-public class PublishToAMQPQueueTest {
+public class PublishToAMQPStreamTest {
 
     public static void run() throws Exception {
         Connection connection = null;

@@ -17,7 +17,7 @@ public class App {
         System.out.println("RabbitMQ JMS Client Sample Starting...");
         
         try {
-            PublishToAMQPQueueTest.run();
+            PublishToAMQPStreamTest.run();
 //            ConsumeFromAMQPQueueTest.run();
 //            ConsumeFromAMQPStreamTest.run();
         } catch (Exception e) {
