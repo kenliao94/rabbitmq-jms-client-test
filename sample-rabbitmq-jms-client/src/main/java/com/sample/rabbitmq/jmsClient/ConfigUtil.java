@@ -33,7 +33,7 @@ public class ConfigUtil {
         }
     }
     
-    public static RMQConnectionFactory createConnectionFactory() throws NoSuchAlgorithmException {
+    public static RMQConnectionFactory createConnectionFactory(Integer channelQoS) throws NoSuchAlgorithmException {
         RMQConnectionFactory factory = new RMQConnectionFactory();
         factory.setHost(envProps.getProperty("RABBITMQ_HOST", "localhost"));
         factory.setPort(Integer.parseInt(envProps.getProperty("RABBITMQ_PORT", "5672")));
@@ -42,6 +42,9 @@ public class ConfigUtil {
         factory.setVirtualHost(envProps.getProperty("RABBITMQ_VIRTUAL_HOST", "/"));
         if (!Objects.equals(envProps.getProperty("RABBITMQ_HOST", "localhost"), "localhost")) {
             factory.useSslProtocol();
+        }
+        if (channelQoS != null) {
+            factory.setChannelsQos(channelQoS);
         }
         return factory;
     }

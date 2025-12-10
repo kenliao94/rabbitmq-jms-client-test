@@ -1,5 +1,6 @@
 package com.sample.rabbitmq.jmsClient;
 
+import com.rabbitmq.jms.client.RMQConnection;
 import jakarta.jms.*;
 import com.rabbitmq.jms.admin.RMQConnectionFactory;
 import com.rabbitmq.jms.admin.RMQDestination;
@@ -12,7 +13,7 @@ public class ConsumeFromAMQPStreamTest {
     public static void run() throws Exception {
         Connection connection = null;
         try {
-            RMQConnectionFactory factory = ConfigUtil.createConnectionFactory();
+            RMQConnectionFactory factory = ConfigUtil.createConnectionFactory(100);
             connection = factory.createConnection();
 
             String queueName = "test-stream-jms";

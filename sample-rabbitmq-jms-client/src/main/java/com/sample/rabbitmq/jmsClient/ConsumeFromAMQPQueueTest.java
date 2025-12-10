@@ -9,7 +9,7 @@ public class ConsumeFromAMQPQueueTest {
     public static void run() throws Exception {
         Connection connection = null;
         try {
-            RMQConnectionFactory factory = ConfigUtil.createConnectionFactory();
+            RMQConnectionFactory factory = ConfigUtil.createConnectionFactory(null);
             connection = factory.createConnection();
             connection.start();
 
